@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "4c194bb3-3ce4-46e0-a7ca-4115e1928bb8",
+		"name": "game",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "User5",
+							"type": "text"
+						},
+						{
+							"key": "user_name",
+							"value": "user5",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "user5@gmai.com",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "password",
+							"value": "Password@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/game/api/v1/signup.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"game",
+						"api",
+						"v1",
+						"signup.php"
+					]
+				},
+				"description": "Signup API"
+			},
+			"response": []
+		},
+		{
+			"name": "Start Match",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "987adb745d178bdb21f73cf001b2474c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/game/api/v1/start_match.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"game",
+						"api",
+						"v1",
+						"start_match.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Attack",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "987adb745d178bdb21f73cf001b2474c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"request_type\":\"normal\",\n    \"match_id\":\"MATCH5f83247a1ae4b\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/game/api/v1/attack.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"game",
+						"api",
+						"v1",
+						"attack.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Of Matches",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "8c84b143d783e4bc2a465929a9cec5ae",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/game/api/v1/match_list.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"game",
+						"api",
+						"v1",
+						"match_list.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "8c84b143d783e4bc2a465929a9cec5ae",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/game/api/v1/logout.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"game",
+						"api",
+						"v1",
+						"logout.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_name\":\"vardhan341\",\n    \"password\":\"Password@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/game/api/v1/login.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"game",
+						"api",
+						"v1",
+						"login.php"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
