@@ -10,7 +10,6 @@
         vm.login = login;
 
         function login() {
-            console.log("login method executing");
             var parameter = JSON.stringify({ user_name: vm.username, password: vm.password });
             vm.dataLoading = true;
             $http({

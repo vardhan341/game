@@ -2,11 +2,13 @@
 $no_session_check = true;
 require_once 'common.php';
 
-$name = isset($_POST['name']) ? trim($_POST['name']) : '';
-$user_name = isset($_POST['user_name']) ? trim($_POST['user_name']) : '';
-$email = isset($_POST['email']) ? trim($_POST['email']) : '';
-$password = isset($_POST['password']) ? trim($_POST['password']) : '';
-$avatar = isset($_FILES['avatar']) ? $_FILES['avatar'] : [];
+$json_data = json_decode(file_get_contents('php://input'), true);
+
+$name = isset($json_data['name']) ? trim($json_data['name']) : '';
+$user_name = isset($json_data['user_name']) ? trim($json_data['user_name']) : '';
+$email = isset($json_data['email']) ? trim($json_data['email']) : '';
+$password = isset($json_data['password']) ? trim($json_data['password']) : '';
+// $avatar = isset($_FILES['avatar']) ? $_FILES['avatar'] : [];
 
 if (empty($user_name) || empty($password) || empty($email) || empty($name) //|| empty($avatar)
 ) {
