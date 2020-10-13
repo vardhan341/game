@@ -5,10 +5,10 @@ $env_details["site_root"] = "/var/www/html/game/";
 
 $env_details["environment"] = "local";
 
-$env_details["db"]["host"] = "";
-$env_details["db"]["uname"] = "";
-$env_details["db"]["pass"] = "";
-$env_details["db"]["name"] = "";
+$env_details["db"]["host"] = "localhost";
+$env_details["db"]["uname"] = "root";
+$env_details["db"]["pass"] = "Fidentity@123";
+$env_details["db"]["name"] = "game";
 $env_details["db"]["type"] = "mysqli";
 $env_details["db"]["port"] = "3306";
 

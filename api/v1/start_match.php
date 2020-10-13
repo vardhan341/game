@@ -39,7 +39,7 @@ $data['match_id'] = $match_id;
 $data['user_id'] = $session_user_id;
 $data['status'] = 'in_progress';
 $data['start_at'] = date("Y-m-d H:i:s", strtotime(gmdate('Y-m-d H:i:s')));
-$data['ends_at'] = date("Y-m-d H:i:s", strtotime(gmdate('Y-m-d H:i:s')) + 60);
+$data['ends_at'] = date("Y-m-d H:i:s", strtotime(gmdate('Y-m-d H:i:s')) + intval($global_config['countdown']));
 $data['record_date'] = gmdate('Y-m-d H:i:s');
 $data['commentatory'] = json_encode($commentatory);
 $data['data'] = json_encode(['user_health' => 100, 'monster_health' => 100]);
@@ -56,6 +56,7 @@ $return_data['user_health'] = 100;
 $return_data['monster_health'] = 100;
 $return_data['finish'] = false;
 $return_data['match_id'] = $match_id;
+$return_data['countdown'] = $global_config['countdown'];
 
 $result->status = 200;
 $result->message = 'Match Started!';

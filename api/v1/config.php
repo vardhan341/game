@@ -11,3 +11,4 @@ $global_config["error_files_path"] = $global_config["root"]["site_root"] . "erro
 $global_config["error_files_url"] = $global_config["root"]["server"] . "error_files/";
 $global_config["file_upload_path"] = $global_config["root"]["site_root"] . "uploads/";
 $global_config["file_upload_url"] = $global_config["root"]["server"] . "uploads/";
+$global_config['countdown'] = $env_details['countdown'] ;

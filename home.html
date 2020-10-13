@@ -1,6 +1,7 @@
 <!--home.html-->
 <div class="col-md-8 col-md-offset-2">
     <h2 style="text-align:center;color:blue">GAME</h2>
+    <a href="#" ng-click="vm.logout()">Logout</a>
     <div class="row" ng-show="vm.match">
         <div class="row">
             <div class="progress col-md-4" style="width: 30%;height: 90px; float:left; position:relative;">
@@ -8,7 +9,10 @@
                     {{user_name}} ({{vm.user_health}}%)
                 </div>
             </div>
-            <div class="progress col-md-4 col-md-offset-4" style="width: 30%;height: 90px; float:left; position:relative;">
+            <div class="col-md-1" style="height: 90px; float:left; position:relative;">
+                Time : {{vm.countdown}}
+            </div>
+            <div class="progress col-md-4 col-md-offset-3" style="width: 30%;height: 90px; float:left; position:relative;">
                 <div class="progress-bar " role="progressbar " aria-valuenow="{{vm.monster_health}}" aria-valuemin="0" aria-valuemax="100" style="width: {{vm.monster_health}}%;background-color:#14c40e ">
                     Monstar ({{vm.monster_health}}%)
                 </div>

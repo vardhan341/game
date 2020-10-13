@@ -16,7 +16,7 @@
             $http({
                 method: "POST",
                 data: parameter,
-                url: "http://localhost/game/api/v1/singup.php",
+                url: "http://localhost/game/api/v1/signup.php",
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).then(function(response) {
                 vm.dataLoading = false;

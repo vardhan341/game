@@ -41,13 +41,14 @@ if ($request_type == 'surrender') {
     $return_data['monster_health'] = 0;
     $return_data['finish'] = true;
     $return_data['commentatory'] = $commentatory;
+    $return_data['countdown'] = 0;
     $result->status = 200;
     $result->message = 'You Lost!';
     $result->data = $return_data;
     goto OUT;
 }
 
-if ($end_time < $current_time) {
+if ($request_type == 'timeup' || $end_time <= $current_time) {
 
     $commentatory[] = 'match ended due to time laps';
     $return_data = [];
@@ -55,7 +56,7 @@ if ($end_time < $current_time) {
     $return_data['monster_health'] = 0;
     $return_data['finish'] = true;
     $return_data['commentatory'] = $commentatory;
-
+    $return_data['countdown'] = 0;
     $result->status = 208;
     $result->message = 'Match ended due to time laps';
     $result->data = $return_data;
@@ -99,6 +100,7 @@ $return_data = [];
 $return_data['user_health'] = $user_health;
 $return_data['monster_health'] = $monster_health;
 $return_data['finish'] = false;
+$return_data['countdown'] = $end_time-$current_time;
 
 if ($monster_health <= 0 && $user_health <= 0) {
     $commentatory[] = 'Match tied!';
